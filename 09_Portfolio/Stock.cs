@@ -75,11 +75,15 @@ namespace _09_Portfolio
         {
             Stock s = (Stock)obj;
 
-            return (
+            return 
                 (Symbol == s.Symbol) &&
                 (PricePerShare == s.PricePerShare) &&
-                (NumShares == s.NumShares));
+                (NumShares == s.NumShares);
         }
 
+        internal static object TotalValue(IAsset[] portfolio)
+        {
+            throw new NotImplementedException();
+        }
     }
 }   
