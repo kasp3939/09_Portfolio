@@ -44,18 +44,13 @@ namespace _09_Portfolio
 
         public double GetValue()
         {
-            //Convert.ToInt32(PricePerShare);
-            //Convert.ToDouble(NumShares);
-            //double getvalue = NumShares * PricePerShare;
-            //return getvalue;
+            
             return NumShares * PricePerShare;
         }
 
         internal static double TotalValue(Stock[] stocks)
         {
-            //Stock[] Labels;
-            //Labels = new Stock[2];
-            //return Labels[];
+     
             double sum = 0;
 
             foreach 
@@ -81,9 +76,9 @@ namespace _09_Portfolio
                 (NumShares == s.NumShares);
         }
 
-        //internal static object TotalValue(IAsset[] portfolio)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        internal static object TotalValue(IAsset[] portfolio)
+        {
+            throw new NotImplementedException();
+        }
     }
 }   
