@@ -2,38 +2,80 @@
 
 namespace _09_Portfolio
 {
-    internal class SavingsAccount 
+    internal class SavingsAccount : IAsset
     {
-        private string v1;
-        private int v2;
-        private double v3;
-       
-        
-        
-        public SavingsAccount(string v1, int v2, double v3)
+        public string Account { get; set; }
+        public double InterestRate { get; set; }
+        public double Value { get; set; }
+
+
+        public SavingsAccount() { }
+
+        public SavingsAccount(string account, double value, double interestrate)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
+            Account = account;
+            InterestRate = interestrate;
+            Value = value;
         }
 
-        
-
-        public double InterestRate { get; internal set; }
 
         public override string ToString()
         {
-            return "SavingsAccount[value=1000.0,interestRate=4.2]";
+            return string.Format("SavingsAccount[value={0:0.0},interestRate={1:0.0}]", Value, InterestRate);
         }
 
-        internal int GetValue()
+        public double GetValue()
         {
-            throw new NotImplementedException();
+            return Value;
         }
 
         internal void ApplyInterest()
         {
-            throw new NotImplementedException();
+            Value += Value * (InterestRate / 100);
         }
+
+
     }
 }
+//using System;
+
+//namespace _09_Portfolio
+//{
+
+//    internal class SavingsAccount : IAsset
+//    {
+
+//        public double Value { get; set; }
+//        public double InterestRate { get; set; }
+//        public string Account { get; set; }
+
+//        public SavingsAccount() { }
+
+//        public SavingsAccount(string account, double value, double interestRate)
+//        {
+
+//            Account = account;
+//            Value = value;
+//            InterestRate = interestRate;
+//        }
+
+//        public double GetValue()
+//        {
+
+//            return Value;
+//        }
+
+//        internal void ApplyInterest()
+//        {
+
+//            Value += Value * (InterestRate / 100);
+//        }
+
+//        public override string ToString()
+//        {
+
+//            return string.Format("SavingsAccount[value={0:0.0},interestRate={1:0.0}]", Value, InterestRate);
+                                   // "SavingsAccount[value={0:0.0},interestRate={1:0.0}]"
+//        }
+//    }
+//}

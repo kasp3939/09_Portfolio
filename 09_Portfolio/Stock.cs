@@ -2,7 +2,7 @@
 
 namespace _09_Portfolio
 {
-    internal class Stock
+    internal class Stock : IAsset
     {
         private object obj;
 
@@ -42,7 +42,7 @@ namespace _09_Portfolio
             internal set;                     
         }
 
-        internal double GetValue()
+        public double GetValue()
         {
             //Convert.ToInt32(PricePerShare);
             //Convert.ToDouble(NumShares);
@@ -81,9 +81,9 @@ namespace _09_Portfolio
                 (NumShares == s.NumShares);
         }
 
-        internal static object TotalValue(IAsset[] portfolio)
-        {
-            throw new NotImplementedException();
-        }
+        //internal static object TotalValue(IAsset[] portfolio)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }   
