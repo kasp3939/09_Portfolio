@@ -33,29 +33,29 @@ namespace _09_Portfolio
 
         {
             get;
-            internal set; 
+            internal set;
         }
 
         public string Symbol
         {
             get;
-            internal set;                     
+            internal set;
         }
 
         public double GetValue()
         {
-            
+
             return NumShares * PricePerShare;
         }
 
         internal static double TotalValue(Stock[] stocks)
         {
-     
+
             double sum = 0;
 
-            foreach 
+            foreach
                 (Stock stock in stocks)
-                    { sum += stock.GetValue(); }
+            { sum += stock.GetValue(); }
 
             return sum;
         }
@@ -70,15 +70,23 @@ namespace _09_Portfolio
         {
             Stock s = (Stock)obj;
 
-            return 
+            return
                 (Symbol == s.Symbol) &&
                 (PricePerShare == s.PricePerShare) &&
                 (NumShares == s.NumShares);
         }
 
-        internal static object TotalValue(IAsset[] portfolio)
+        internal static double TotalValue(IAsset[] portfolio)
         {
-            throw new NotImplementedException();
+            double res = 0;
+            foreach (IAsset i in portfolio)
+            {
+                res = i.GetValue() + res;
+            }
+
+            return res;
+            
         }
     }
+       
 }   

@@ -32,14 +32,11 @@ namespace _09_Portfolio
 
         }
 
-        public void AddAsset(Stock stockHP)
+        public void AddAsset(IAsset classInstance)
         {
             stocks.Add(classInstance);
         }
 
-        public void AddAsset(SavingsAccount cd1000)
-        {
-            stocks.Add(classInstance);
-        }
+        
     }
 }
