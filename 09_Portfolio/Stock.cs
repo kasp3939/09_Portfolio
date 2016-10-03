@@ -79,9 +79,9 @@ namespace _09_Portfolio
         internal static double TotalValue(IAsset[] portfolio)
         {
             double res = 0;
-            foreach (IAsset i in portfolio)
+            foreach (IAsset r in portfolio)
             {
-                res = i.GetValue() + res;
+                res = r.GetValue() + res;
             }
 
             return res;
